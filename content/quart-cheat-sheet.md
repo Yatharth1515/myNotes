@@ -9,17 +9,41 @@ tags:
 
 # 🚀 Quartz Cheat Sheet & Reference
 
-This page serves as a live guide for all core Quartz features and Markdown formatting options.
+This page serves as a live guide for all core Quartz features, Markdown formatting options, and linking best practices.
 
 ---
 
-## 🔗 1. Internal Links & Graph Connectivity
+## 🔗 1. Complete Guide to Linking in Quartz
 
-Quartz uses double brackets `[[ ]]` to automatically connect notes and populate the interactive **Graph View**.
+Quartz supports standard WikiLinks (`[[...]]`), Markdown links (`[...](...)`), file attachments, and cross-references. All internal WikiLinks automatically populate your interactive **Graph View**.
 
-* **Standard Note Link:** [[index]] (Links to `index.md`)
-* **Aliased Link:** [[index|Go to Homepage]] (Displays custom text instead of filename)
-* **Sub-Header Link:** [[index#welcome|Jump to Welcome Section]] (Links to a specific heading inside a page)
+### A. Internal Note Links (WikiLinks)
+* **Standard Page Link:**  
+  `[[index]]` $\rightarrow$ Links to `content/index.md`
+* **Custom Display Text (Aliased Link):**  
+  `[[index|Back to Homepage]]` $\rightarrow$ Displays "Back to Homepage" instead of the filename.
+* **Folder / Subpath Link:**  
+  `[[backend/spring-boot]]` $\rightarrow$ Links to a nested file at `content/backend/spring-boot.md`.
+* **Section / Heading Link:**  
+  `[[profile#tech-stack|View Tech Stack Section]]` $\rightarrow$ Jumps directly to the `# Tech Stack` heading inside `profile.md`.
+
+### B. Media & File Attachments (Images & PDFs)
+Store files inside your `content/` folder (e.g., in a `content/assets/` folder):
+
+* **Embed an Image:**  
+  `![[assets/architecture-diagram.png]]` or `![Architecture Diagram](assets/architecture-diagram.png)`
+* **Image with Custom Width:**  
+  `![[assets/architecture-diagram.png|500]]`
+* **Link to PDF File (Download):**  
+  `[Download PDF Resume](assets/Yatharth_Resume.pdf)`
+* **Embed PDF Viewer Directly:**  
+  `<iframe src="assets/Yatharth_Resume.pdf" width="100%" height="600px"></iframe>`
+
+### C. External Links (Web Sites)
+* **Standard Web Link:**  
+  `[LinkedIn Profile](https://linkedin.com/in/yatharth-singh-baghel-)`
+* **Mail & Phone Links:**  
+  `[Send Email](mailto:yatharthbaghel@gmail.com)` | `[Call Me](tel:+918839095297)`
 
 ---
 
