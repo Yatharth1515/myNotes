@@ -1,79 +1,69 @@
 ---
-title: Quartz Syntax & Reference Guide
+title: Quartz Cheat Sheet & Reference Guide
 date: 2026-08-30
 tags:
   - quartz
-  - documentation
   - markdown
+  - documentation
 ---
 
-# 🚀 Quartz Cheat Sheet & Reference
+# 🚀 Quartz Complete Cheat Sheet
 
-This page serves as a live guide for all core Quartz features, Markdown formatting options, and linking best practices.
-
----
-
-## 🔗 1. Complete Guide to Linking in Quartz
-
-Quartz supports standard WikiLinks (`[[...]]`), Markdown links (`[...](...)`), file attachments, and cross-references. All internal WikiLinks automatically populate your interactive **Graph View**.
-
-### A. Internal Note Links (WikiLinks)
-* **Standard Page Link:**  
-  `[[index]]` $\rightarrow$ Links to `content/index.md`
-* **Custom Display Text (Aliased Link):**  
-  `[[index|Back to Homepage]]` $\rightarrow$ Displays "Back to Homepage" instead of the filename.
-* **Folder / Subpath Link:**  
-  `[[backend/spring-boot]]` $\rightarrow$ Links to a nested file at `content/backend/spring-boot.md`.
-* **Section / Heading Link:**  
-  `[[profile#tech-stack|View Tech Stack Section]]` $\rightarrow$ Jumps directly to the `# Tech Stack` heading inside `profile.md`.
-
-### B. Media & File Attachments (Images & PDFs)
-Store files inside your `content/` folder (e.g., in a `content/assets/` folder):
-
-* **Embed an Image:**  
-  `![[assets/architecture-diagram.png]]` or `![Architecture Diagram](assets/architecture-diagram.png)`
-* **Image with Custom Width:**  
-  `![[assets/architecture-diagram.png|500]]`
-* **Link to PDF File (Download):**  
-  `[Download PDF Resume](assets/Yatharth_Resume.pdf)`
-* **Embed PDF Viewer Directly:**  
-  `<iframe src="assets/Yatharth_Resume.pdf" width="100%" height="600px"></iframe>`
-
-### C. External Links (Web Sites)
-* **Standard Web Link:**  
-  `[LinkedIn Profile](https://linkedin.com/in/yatharth-singh-baghel-)`
-* **Mail & Phone Links:**  
-  `[Send Email](mailto:yatharthbaghel@gmail.com)` | `[Call Me](tel:+918839095297)`
+This page provides functional examples of all core Quartz features and Markdown elements.
 
 ---
 
-## 💡 2. Styled Callout Boxes
+## 🔗 1. Internal & External Linking
 
-Create styled visual highlight blocks using standard blockquote syntax:
+Quartz uses double brackets `[[ ]]` for internal links, which automatically link pages and update your interactive **Graph View**.
+
+### A. Internal Links (WikiLinks)
+* **Link to Homepage:** [[index]]
+* **Link with Custom Text:** [[index|Return to Developer Profile]]
+* **Link to Specific Heading:** [[index#-professional-experience|Jump to Experience Section]]
+
+### B. External Links & Contact Links
+* **Web Link:** [GitHub Profile](https://github.com/Yatharth1515)
+* **Direct Email:** [Send Email](mailto:yatharthbaghel@gmail.com)
+* **Direct Call:** [Call Phone](tel:+918839095297)
+
+---
+
+## 💡 2. Interactive Callout Boxes
+
+Quartz turns blockquotes with special tags into styled highlight boxes:
 
 > [!note] General Note
-> Use this to highlight standard tips, context, or reminders.
+> Use this to highlight general tips, architectural notes, or reminders.
 
-> [!tip] Pro Tip
-> Press `Ctrl + K` (or `Cmd + K`) on any page to open the global instant search bar.
+> [!tip] Keyboard Shortcut
+> Press `Ctrl + K` (or `Cmd + K`) anywhere on the site to open instant full-text search.
 
-> [!warning] Production Alert
-> Always commit your files to the `v5` branch inside the `/content` directory to trigger auto-deployment.
+> [!warning] Branch Deployment
+> Ensure all changes are committed to your working deployment branch (e.g., `v5`) inside the `content/` folder.
 
 > [!info] Information
-> Folders created inside `/content` automatically turn into expandable categories in the sidebar.
+> Subfolders created inside `content/` automatically render as expandable categories in the left sidebar.
+
+> [!success] Build Status
+> When GitHub Actions completes the build, changes reflect live within 1–2 minutes.
 
 ---
 
 ## 💻 3. Code Blocks & Syntax Highlighting
 
-Quartz automatically applies theme styling, line numbers, and a copy button to code blocks:
+Quartz automatically handles line numbers, code highlighting, and includes a copy button:
 
 ```java
-package com.example.notes;
+package com.example.service;
 
-public class QuartzDemo {
-    public static void main(String[] args) {
-        System.out.println("Quartz automatically formats this code block!");
+import org.springframework.stereotype.Service;
+
+@Service
+public class IngestionService {
+    
+    public void processData(String payload) {
+        // Quartz formats Java code with custom theme styling
+        System.out.println("Processing: " + payload);
     }
 }
