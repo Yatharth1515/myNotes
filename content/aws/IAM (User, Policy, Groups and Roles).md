@@ -1,4 +1,22 @@
+---
+title: "IAM (User, Policy, Groups and Roles)"
+tags:
+  - aws
+  - iam
+---
+
 # IAM (User, Policy, Groups and Roles)
+
+[AWS index](./index.md) · [AWS Networking - Part1 →](./AWS%20Networking%20-%20Part1.md)
+
+## On this page
+
+- [IAM and access decisions](#iam-identity-and-access-management)
+- [IAM entities](#iam-entities)
+- [IAM user](#1-iam-user)
+- [IAM policy](#2-iam-policy)
+- [IAM group](#3-iam-group)
+- [IAM role](#4-iam-role)
 
 Wednesday, 27 May 2026  ·  11:05 AM
 
@@ -2367,7 +2385,7 @@ AllowAllS3Actions
 </pre>
 </details>
 
-## 4. IAM ROLE
+## 4. IAM Role
 
 IAM Role provides temporary identity.
 
@@ -3156,3 +3174,5 @@ insights
 S3 working fine
 
 *The embedded screenshots are represented by their OneNote accessible text. Access key IDs appearing in screenshots have been masked for publication.*
+
+[AWS index](./index.md) · [AWS Networking - Part1 →](./AWS%20Networking%20-%20Part1.md)
